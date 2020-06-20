@@ -6,19 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="47.74.21.152">
-  <title>if .isna(): | 雪の華</title>
+  <title>Codility L4 T2 | 雪の華</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1if pd_process_data_2.loc[series_to_replace, &amp;apos;title_keyword_1&amp;apos;].isna():  ValueError: (‘The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().’, ‘occur">
+  <meta name="description" content="Codility L4 T1.MaxCounters">
+<meta name="keywords" content="Codility">
 <meta property="og:type" content="article">
-<meta property="og:title" content="if .isna():">
-<meta property="og:url" content="47.74.21.152/2019/10/28/if-isna/index.html">
+<meta property="og:title" content="Codility L4 T2">
+<meta property="og:url" content="47.74.21.152/2020/06/20/Codility-L4-T2/index.html">
 <meta property="og:site_name" content="雪の華">
-<meta property="og:description" content="1if pd_process_data_2.loc[series_to_replace, &amp;apos;title_keyword_1&amp;apos;].isna():  ValueError: (‘The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().’, ‘occur">
+<meta property="og:description" content="Codility L4 T1.MaxCounters">
 <meta property="og:locale" content="Chinese, English, Japanese.">
-<meta property="og:updated_time" content="2019-10-28T08:26:56.419Z">
+<meta property="og:updated_time" content="2020-06-20T15:31:07.523Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="if .isna():">
-<meta name="twitter:description" content="1if pd_process_data_2.loc[series_to_replace, &amp;apos;title_keyword_1&amp;apos;].isna():  ValueError: (‘The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().’, ‘occur">
+<meta name="twitter:title" content="Codility L4 T2">
+<meta name="twitter:description" content="Codility L4 T1.MaxCounters">
   
     <link rel="alternative" href="/atom.xml" title="雪の華" type="application/atom+xml">
   
@@ -156,26 +157,26 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-if-isna" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Codility-L4-T2" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      if .isna():
+      Codility L4 T2
     </h1>
   
 
         
-        <a href="/2019/10/28/if-isna/" class="archive-article-date">
+        <a href="/2020/06/20/Codility-L4-T2/" class="archive-article-date">
 
         <!-- 不蒜子统计 -->
         <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-  	<time datetime="2019-10-28T08:23:07.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-10-28</time>
+  	<time datetime="2020-06-20T14:39:08.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
 </a>
 
         
@@ -183,17 +184,44 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if pd_process_data_2.loc[series_to_replace, &apos;title_keyword_1&apos;].isna():</span><br></pre></td></tr></table></figure>
+        <h1 id="Codility-L4-T1-MaxCounters"><a href="#Codility-L4-T1-MaxCounters" class="headerlink" title="Codility L4 T1.MaxCounters"></a>Codility L4 T1.MaxCounters</h1><a id="more"></a>
 
-<p>ValueError: (‘The truth value of a Series is ambiguous. Use a.empty, a.bool(), a.item(), a.any() or a.all().’, ‘occurred at index 0’)</p>
-<a id="more"></a>
+<h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p>You are given N counters, initially set to 0, and you have two possible operations on them:</p>
+<p>increase(X) − counter X is increased by 1,<br>max counter − all counters are set to the maximum value of any counter.<br>A non-empty array A of M integers is given. This array represents consecutive operations:</p>
+<p>if A[K] = X, such that 1 ≤ X ≤ N, then operation K is increase(X),<br>if A[K] = N + 1 then operation K is max counter.<br>For example, given integer N = 5 and array A such that:</p>
+<pre><code>A[0] = 3
+A[1] = 4
+A[2] = 4
+A[3] = 6
+A[4] = 1
+A[5] = 4
+A[6] = 4</code></pre><p>the values of the counters after each consecutive operation will be:</p>
+<pre><code>(0, 0, 1, 0, 0)
+(0, 0, 1, 1, 0)
+(0, 0, 1, 2, 0)
+(2, 2, 2, 2, 2)
+(3, 2, 2, 2, 2)
+(3, 2, 2, 3, 2)
+(3, 2, 2, 4, 2)</code></pre><p>The goal is to calculate the value of every counter after all operations.</p>
+<p>Write a function:</p>
+<p>def solution(N, A)</p>
+<p>that, given an integer N and a non-empty array A consisting of M integers, returns a sequence of integers representing the values of the counters.</p>
+<p>Result array should be returned as an array of integers.</p>
+<p>For example, given:</p>
+<pre><code>A[0] = 3
+A[1] = 4
+A[2] = 4
+A[3] = 6
+A[4] = 1
+A[5] = 4
+A[6] = 4</code></pre><p>the function should return [3, 2, 2, 4, 2], as explained above.</p>
+<p>Write an efficient algorithm for the following assumptions:</p>
+<p>N and M are integers within the range [1..100,000];<br>each element of array A is an integer within the range [1..N + 1].</p>
+<h1 id="Solution-1-time-out"><a href="#Solution-1-time-out" class="headerlink" title="Solution.1(time out)"></a>Solution.1(time out)</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def solution(N, A):</span><br><span class="line">    # write your code in Python 3.6</span><br><span class="line">    result = [0] * N</span><br><span class="line">    for i in range(len(A)):</span><br><span class="line">        if A[i] == N +1:</span><br><span class="line">            result = [max(result)] * N</span><br><span class="line">        else:</span><br><span class="line">            result[A[i] - 1] += 1</span><br><span class="line">    return result</span><br><span class="line">    pass</span><br></pre></td></tr></table></figure>
 
-<hr>
-<p>Solution:</p>
-<p>use</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">if pd_process_data_2.loc[series_to_replace, &apos;title_keyword_1&apos;].empty:</span><br></pre></td></tr></table></figure>
+<h1 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution.2"></a>Solution.2</h1><p>use lazy-write</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(N, A)</span>:</span></span><br><span class="line">    <span class="comment"># write your code in Python 3.6</span></span><br><span class="line">    result = [<span class="number">0</span>] * N</span><br><span class="line">    used_max = <span class="number">0</span> <span class="comment"># The used value in previous max_counter command</span></span><br><span class="line">    current_max = <span class="number">0</span> <span class="comment"># The current maximum value of any counter</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(A)):</span><br><span class="line">        <span class="keyword">if</span> A[i] &lt;= N :</span><br><span class="line">            <span class="keyword">if</span> result[A[i] - <span class="number">1</span>] &lt; used_max:</span><br><span class="line">                result[A[i] - <span class="number">1</span>] = used_max +<span class="number">1</span></span><br><span class="line">            <span class="keyword">else</span>:</span><br><span class="line">                result[A[i] - <span class="number">1</span>] += <span class="number">1</span></span><br><span class="line">            <span class="keyword">if</span> current_max &lt; result[A[i] - <span class="number">1</span>]: <span class="comment"># important, don't forget to record</span></span><br><span class="line">                current_max = result[A[i] - <span class="number">1</span>]</span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            used_max = current_max</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(N):</span><br><span class="line">        result[i] = max(used_max, result[i])</span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="comment"># O(N + M)</span></span><br></pre></td></tr></table></figure>
 
-<p>instead</p>
 
       
 
@@ -207,6 +235,17 @@
       
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Codility</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -257,7 +296,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:47.74.21.152/2019/10/28/if-isna/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:47.74.21.152/2020/06/20/Codility-L4-T2/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -271,18 +310,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2020/06/20/Codility L2 T2/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Codility L2
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/10/28/incomplete-escape-u/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">incomplete escape \\u</div>
+    <a href="/2020/06/20/Codility-L4-T1/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Codility L4 T1</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -309,7 +339,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    目录，不存在的…
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Codility-L4-T1-MaxCounters"><span class="toc-number">1.</span> <span class="toc-text">Codility L4 T1.MaxCounters</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Problem"><span class="toc-number">2.</span> <span class="toc-text">Problem</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Solution-1-time-out"><span class="toc-number">3.</span> <span class="toc-text">Solution.1(time out)</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Solution-2"><span class="toc-number">4.</span> <span class="toc-text">Solution.2</span></a></li></ol>
                     </div>
                 </span>
             </div>
