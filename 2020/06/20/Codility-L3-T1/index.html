@@ -6,22 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="47.74.21.152">
-  <title>flask Blueprint with matplotlib | 雪の華</title>
+  <title>Codility L3 T1 | 雪の華</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Layout">
-<meta name="keywords" content="matplotlib,flask">
+  <meta name="description" content="Codility L3 T2.PermMissingElem">
+<meta name="keywords" content="Codility">
 <meta property="og:type" content="article">
-<meta property="og:title" content="flask Blueprint with matplotlib">
-<meta property="og:url" content="47.74.21.152/2019/08/15/flask Blueprint with matplotlib/index.html">
+<meta property="og:title" content="Codility L3 T1">
+<meta property="og:url" content="47.74.21.152/2020/06/20/Codility-L3-T1/index.html">
 <meta property="og:site_name" content="雪の華">
-<meta property="og:description" content="Layout">
+<meta property="og:description" content="Codility L3 T2.PermMissingElem">
 <meta property="og:locale" content="Chinese, English, Japanese.">
-<meta property="og:image" content="47.74.21.152/2019/08/15/flask%20Blueprint%20with%20matplotlib/layout.png">
-<meta property="og:updated_time" content="2019-08-14T17:11:30.060Z">
+<meta property="og:updated_time" content="2020-06-20T13:31:27.524Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="flask Blueprint with matplotlib">
-<meta name="twitter:description" content="Layout">
-<meta name="twitter:image" content="47.74.21.152/2019/08/15/flask%20Blueprint%20with%20matplotlib/layout.png">
+<meta name="twitter:title" content="Codility L3 T1">
+<meta name="twitter:description" content="Codility L3 T2.PermMissingElem">
   
     <link rel="alternative" href="/atom.xml" title="雪の華" type="application/atom+xml">
   
@@ -159,26 +157,26 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-flask Blueprint with matplotlib" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-Codility-L3-T1" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      flask Blueprint with matplotlib
+      Codility L3 T1
     </h1>
   
 
         
-        <a href="/2019/08/15/flask Blueprint with matplotlib/" class="archive-article-date">
+        <a href="/2020/06/20/Codility-L3-T1/" class="archive-article-date">
 
         <!-- 不蒜子统计 -->
         <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
               <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
         </span>
 
-  	<time datetime="2019-08-14T16:18:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-15</time>
+  	<time datetime="2020-06-20T08:12:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
 </a>
 
         
@@ -186,25 +184,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="Layout"><a href="#Layout" class="headerlink" title="Layout"></a>Layout</h3><a id="more"></a>
+        <h1 id="Codility-L3-T2-PermMissingElem"><a href="#Codility-L3-T2-PermMissingElem" class="headerlink" title="Codility L3 T2.PermMissingElem"></a>Codility L3 T2.PermMissingElem</h1><a id="more"></a>
 
-<p><img src="layout.png" alt="layout"></p>
-<hr>
-<h5 id="just-need-to-create-2-core-files"><a href="#just-need-to-create-2-core-files" class="headerlink" title="just need to create 2 core files:"></a>just need to create 2 core files:</h5><figure class="highlight ruby"><figcaption><span>\__init__.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">from flask import Flask</span><br><span class="line">from flask_indeed.blueprints.search import bp_search</span><br><span class="line"></span><br><span class="line"><span class="comment"># Flask app factory pattern</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_app</span><span class="params">(test_config=None)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="comment"># create and configure the app</span></span><br><span class="line">    app = Flask(__name_<span class="number">_</span>, instance_relative_config=True)</span><br><span class="line">    app.config.from_mapping(</span><br><span class="line">        SECRET_KEY=<span class="string">'flask_indeed'</span>,</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> test_config is <span class="symbol">None:</span></span><br><span class="line">        <span class="comment"># load the instance config, if it exists, when not testing</span></span><br><span class="line">        app.config.from_pyfile(<span class="string">'config.py'</span>, silent=True)</span><br><span class="line">    <span class="symbol">else:</span></span><br><span class="line">        <span class="comment"># load the test config if passed in</span></span><br><span class="line">        app.config.from_mapping(test_config)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># ensure the instance folder exists</span></span><br><span class="line">    <span class="symbol">try:</span></span><br><span class="line">        os.makedirs(app.instance_path)</span><br><span class="line">    except <span class="symbol">OSError:</span></span><br><span class="line">        pass</span><br><span class="line"></span><br><span class="line">    app.register_blueprint(bp_search)</span><br><span class="line"></span><br><span class="line">    app.add_url_rule(<span class="string">'/'</span>, endpoint=<span class="string">'search.index'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> app</span><br></pre></td></tr></table></figure>
+<h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><p>An array A consisting of N different integers is given. The array contains integers in the range [1..(N + 1)], which means that exactly one element is missing.</p>
+<p>Your goal is to find that missing element.</p>
+<p>Write a function:</p>
+<blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; def solution(A)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>that, given an array A, returns the value of the missing element.</p>
+<p>For example, given array A such that:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A[0] = 2  A[1] = 3  A[2] = 1  A[3] = 5</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight ruby"><figcaption><span>\blueprints\search\__init__.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">from flask import Blueprint</span><br><span class="line"></span><br><span class="line">bp_search = Blueprint(<span class="string">'search'</span>, __name_<span class="number">_</span>, url_prefix=<span class="string">'/search'</span>)</span><br><span class="line"></span><br><span class="line">from . import routes</span><br></pre></td></tr></table></figure>
+<p>the function should return 4, as it is the missing element.</p>
+<p>Write an <strong><em>\</em>efficient**</strong> algorithm for the following assumptions:</p>
+<blockquote>
+<ul>
+<li>N is an integer within the range [0..100,000];</li>
+<li>the elements of A are all distinct;</li>
+<li>each element of array A is an integer within the range [1..(N + 1)].</li>
+</ul>
+</blockquote>
+<h1 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution.1"></a>Solution.1</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="comment"># write your code in Python 3.6</span></span><br><span class="line">    length = len(A)</span><br><span class="line">    A = sorted(A)</span><br><span class="line">    <span class="keyword">if</span> length == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> A[<span class="number">0</span>] != <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">    <span class="keyword">elif</span> A[length - <span class="number">1</span>] != length + <span class="number">1</span>:</span><br><span class="line">        <span class="keyword">return</span> length + <span class="number">1</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">for</span> i <span class="keyword">in</span> range(length):</span><br><span class="line">            <span class="keyword">if</span> A[i] != i + <span class="number">1</span>:</span><br><span class="line">                <span class="keyword">return</span> i + <span class="number">1</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 
-<hr>
-<h5 id="the-plt-draw-function-should-be-ended-as-below"><a href="#the-plt-draw-function-should-be-ended-as-below" class="headerlink" title="the plt draw function should be ended as below"></a>the plt draw function should be ended as below</h5><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Save figure to a buffer and return raw data</span></span><br><span class="line">buf = BytesIO()</span><br><span class="line">fig.savefig(buf, format=<span class="string">"png"</span>)</span><br><span class="line">plt.clf()</span><br><span class="line"></span><br><span class="line"><span class="keyword">return</span> base64.b64encode(buf.getbuffer()).decode(<span class="string">"ascii"</span>), title_of_chart</span><br></pre></td></tr></table></figure>
+<h1 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution.2"></a>Solution.2</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="comment"># write your code in Python 3.6</span></span><br><span class="line">    N = len(A) + <span class="number">1</span></span><br><span class="line">    sum_N = (N * (N+<span class="number">1</span>)) / <span class="number">2</span></span><br><span class="line">    <span class="keyword">return</span> int(sum_N - sum(A))</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure>
 
-<h5 id="an-example"><a href="#an-example" class="headerlink" title="an example"></a>an example</h5><figure class="highlight ruby"><figcaption><span>\classify_with_indeed.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">draw</span><span class="params">(keyword)</span></span><span class="symbol">:</span></span><br><span class="line">    df_picked = company(keyword)</span><br><span class="line">    <span class="comment"># df_picked = pickup_companies(keyword)</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Compute number of agencies for a company and create a series for plotting 'using value_counts()'.</span></span><br><span class="line">    df_picked[<span class="string">'agency'</span>].fillna(NO_AGENCY, inplace=True)</span><br><span class="line">    agency_count = df_picked[<span class="string">'agency'</span>].value_counts()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># enable display Japanese</span></span><br><span class="line">    plt.rcParams[<span class="string">'font.sans-serif'</span>] = [<span class="string">'Arial Unicode MS'</span>, <span class="string">'SimHei'</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># enable display positive and negative</span></span><br><span class="line">    plt.rcParams[<span class="string">'axes.unicode_minus'</span>] = False</span><br><span class="line"></span><br><span class="line">    <span class="comment"># draw</span></span><br><span class="line">    plt.title(<span class="string">"sponsors for %s"</span> % title_of_chart)</span><br><span class="line"></span><br><span class="line">    plt.bar(agency_count.index, agency_count.values)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># make x ticks easier to see</span></span><br><span class="line">    plt.xticks(rotation=<span class="number">80</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># set pics' size</span></span><br><span class="line">    fig = plt.gcf()</span><br><span class="line">    fig.set_size_inches(<span class="number">37</span>, <span class="number">21</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Save figure to a buffer and return raw data</span></span><br><span class="line">    buf = BytesIO()</span><br><span class="line">    fig.savefig(buf, format=<span class="string">"png"</span>)</span><br><span class="line">    plt.clf()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> base64.b64encode(buf.getbuffer()).decode(<span class="string">"ascii"</span>), title_of_chart</span><br></pre></td></tr></table></figure>
+<h1 id="Solution-3"><a href="#Solution-3" class="headerlink" title="Solution.3"></a>Solution.3</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="comment"># write your code in Python 3.6</span></span><br><span class="line">    length = len(A)</span><br><span class="line">    xor_sum = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> index <span class="keyword">in</span> range(<span class="number">0</span>, length):</span><br><span class="line">        xor_sum = xor_sum ^ A[index] ^ (index + <span class="number">1</span>)</span><br><span class="line">    <span class="keyword">return</span> xor_sum^(length + <span class="number">1</span>)</span><br></pre></td></tr></table></figure>
 
-<hr>
-<h5 id="call-in-routes"><a href="#call-in-routes" class="headerlink" title="call in routes"></a>call in routes</h5><figure class="highlight ruby"><figcaption><span>\blueprints\search\routes.py</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@bp_search.route(<span class="string">'/query'</span>)</span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">query</span><span class="params">()</span></span><span class="symbol">:</span></span><br><span class="line">    keyword = request.args.get(<span class="string">"keyword"</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="symbol">keyword:</span></span><br><span class="line">    	pic_data, company = classify_with_agency.draw([keyword])</span><br><span class="line">    	<span class="keyword">return</span> render_template(<span class="string">'search.html'</span>, pic_data=pic_data, company=cpn)</span><br><span class="line">    </span><br><span class="line">    <span class="symbol">else:</span></span><br><span class="line">        <span class="keyword">return</span> redirect(url_for(<span class="string">'search.index'</span>))</span><br></pre></td></tr></table></figure>
-
-<hr>
-<h5 id="call-in-html"><a href="#call-in-html" class="headerlink" title="call in html"></a>call in html</h5><figure class="highlight ruby"><figcaption><span>\templates\search.html</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"></span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;p&gt;sponsors <span class="symbol">distribution:</span></span><br><span class="line">    &lt;img src=<span class="string">'data:image/png;base64,&#123;&#123;pic_data&#125;&#125;'</span> alt=<span class="string">"Chart"</span> height=<span class="string">"1000"</span> width=<span class="string">"1500"</span> /&gt;</span><br><span class="line">    &lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">&lt;/body</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
-
+<p>because</p>
+<p>x ^ x = 0</p>
+<p>0 ^ x = x</p>
 
       
 
@@ -223,11 +232,7 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">matplotlib</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">flask</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Codility</a>
         		</li>
       		
 		</ul>
@@ -283,7 +288,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http:47.74.21.152/2019/08/15/flask Blueprint with matplotlib/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http:47.74.21.152/2020/06/20/Codility-L3-T1/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -297,18 +302,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/08/28/unable-to-locate-libjasper-dev/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          unable to locate libjasper-dev
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/08/09/flask设置path/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">flask设置path</div>
+    <a href="/2020/06/20/Codility L2/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Codility L2</div>
       <i class="icon-circle-right"></i>
     </a>
   
@@ -335,7 +331,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Layout"><span class="toc-number">1.</span> <span class="toc-text">Layout</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#just-need-to-create-2-core-files"><span class="toc-number">1.0.1.</span> <span class="toc-text">just need to create 2 core files:</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#the-plt-draw-function-should-be-ended-as-below"><span class="toc-number">1.0.2.</span> <span class="toc-text">the plt draw function should be ended as below</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#an-example"><span class="toc-number">1.0.3.</span> <span class="toc-text">an example</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#call-in-routes"><span class="toc-number">1.0.4.</span> <span class="toc-text">call in routes</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#call-in-html"><span class="toc-number">1.0.5.</span> <span class="toc-text">call in html</span></a></li></ol></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Codility-L3-T2-PermMissingElem"><span class="toc-number">1.</span> <span class="toc-text">Codility L3 T2.PermMissingElem</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Problem"><span class="toc-number">2.</span> <span class="toc-text">Problem</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Solution-1"><span class="toc-number">3.</span> <span class="toc-text">Solution.1</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Solution-2"><span class="toc-number">4.</span> <span class="toc-text">Solution.2</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Solution-3"><span class="toc-number">5.</span> <span class="toc-text">Solution.3</span></a></li></ol>
                     </div>
                 </span>
             </div>
