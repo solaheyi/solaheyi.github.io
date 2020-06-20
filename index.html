@@ -160,50 +160,27 @@
     <article id="post-Codility L2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/06/20/Codility L2/">Codility L2</a>
+    </h1>
+  
+
+        
+        <a href="/2020/06/20/Codility L2/" class="archive-article-date">
+
+  	<time datetime="2020-06-20T07:12:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-20</time>
+</a>
+
+        
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h1><ul>
-<li><p>A non-empty array A consisting of N integers is given. The array contains an odd number of elements, and each element of the array can be paired with another element that has the same value, except for one element that is left unpaired.</p>
-<p>For example, in array A such that:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A[0] = 9  A[1] = 3  A[2] = 9  A[3] = 3  A[4] = 9  A[5] = 7  A[6] = 9</span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<ul>
-<li>the elements at indexes 0 and 2 have value 9,</li>
-<li>the elements at indexes 1 and 3 have value 3,</li>
-<li>the elements at indexes 4 and 6 have value 9,</li>
-<li>the element at index 5 has value 7 and is unpaired.</li>
-</ul>
-</blockquote>
-<p>Write a function:</p>
-<blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; def solution(A)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
-</blockquote>
-<p>that, given an array A consisting of N integers fulfilling the above conditions, returns the value of the unpaired element.</p>
-<p>For example, given array A such that:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">A[0] = 9  A[1] = 3  A[2] = 9  A[3] = 3  A[4] = 9  A[5] = 7  A[6] = 9</span><br></pre></td></tr></table></figure>
-
-<p>the function should return 7, as explained in the example above.</p>
-<p>Write an <em>efficient</em> algorithm for the following assumptions:</p>
-<blockquote>
-<ul>
-<li>N is an odd integer within the range [1..1,000,000];</li>
-<li>each element of array A is an integer within the range [1..1,000,000,000];</li>
-<li>all but one of the values in A occur an even number of times.</li>
-</ul>
-</blockquote>
-</li>
-</ul>
-<h1 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(A)</span>:</span></span><br><span class="line">	result = <span class="number">0</span></span><br><span class="line">	<span class="keyword">for</span> number <span class="keyword">in</span> A:</span><br><span class="line">		result ^= number</span><br><span class="line">	<span class="keyword">return</span> result</span><br><span class="line"><span class="comment">#O(N)</span></span><br></pre></td></tr></table></figure>
-
-<p>a ^ b = b ^ a</p>
-<p>0 ^ a = 0</p>
-<p>a ^ b ^ b = a</p>
-<p>so,</p>
-<p>a ^ b ^ c ^ d ^ … ^ d ^ c ^ b = a</p>
-<p>reference:</p>
-<p><a href="https://codesays.com/2015/solution-to-odd-occurrences-in-array-by-codility/" target="_blank" rel="noopener">https://codesays.com/2015/solution-to-odd-occurrences-in-array-by-codility/</a> </p>
-
+        <h1 id="Codility-L2"><a href="#Codility-L2" class="headerlink" title="Codility L2"></a>Codility L2</h1>
+        
       
 
       
@@ -212,6 +189,17 @@
       
       
       
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Codility</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
       
 
       
@@ -1069,7 +1057,7 @@ MathJax.Hub.Queue(function() {
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">todo</a>
+                <a href="javascript:void(0)" class="js-tag color4">Codility</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1081,11 +1069,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">data mining</a>
+                <a href="javascript:void(0)" class="js-tag color5">todo</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color1">Caffe</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">data mining</a>
               </li>
              
               <li class="article-tag-list-item">
