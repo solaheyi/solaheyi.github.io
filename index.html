@@ -564,11 +564,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Solution-1-time-out"><a href="#Solution-1-time-out" class="headerlink" title="Solution.1(time out)"></a>Solution.1(time out)</h1><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">solution</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="comment"># write your code in Python 3.6</span></span><br><span class="line">    result = <span class="number">0</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(len(A)):</span><br><span class="line">        <span class="keyword">for</span> j <span class="keyword">in</span> range(len(A[i+<span class="number">1</span>:])):</span><br><span class="line">            <span class="keyword">if</span> i - A[i] &lt;= i + <span class="number">1</span>+ j + A[i + <span class="number">1</span> + j] <span class="keyword">and</span> i + A[i] &gt;= i + <span class="number">1</span> + j - A[i + <span class="number">1</span> + j]:</span><br><span class="line">                result += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> result &gt; <span class="number">10000000</span>:</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">    <span class="keyword">return</span> result</span><br><span class="line">    <span class="keyword">pass</span></span><br><span class="line"><span class="comment"># O(N**2)</span></span><br></pre></td></tr></table></figure>
-
-<h1 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution.2"></a>Solution.2</h1><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">def solution(A):</span><br><span class="line">    circle_endpoints = []</span><br><span class="line">    for i, a in enumerate(A):</span><br><span class="line">        circle_endpoints += [(i-a, True), (i+a, False)]</span><br><span class="line"> </span><br><span class="line">    circle_endpoints.sort(key=lambda x: (x[0], not x[1]))</span><br><span class="line"> </span><br><span class="line">    intersections, active_circles = 0, 0</span><br><span class="line"> </span><br><span class="line">    for _, is_beginning in circle_endpoints:</span><br><span class="line">        if is_beginning:</span><br><span class="line">            intersections += active_circles</span><br><span class="line">            active_circles += 1</span><br><span class="line">        else:</span><br><span class="line">            active_circles -= 1</span><br><span class="line">        if intersections &gt; 10E6:</span><br><span class="line">            return -1</span><br><span class="line"> </span><br><span class="line">    return intersections</span><br></pre></td></tr></table></figure>
-
-
+        <h1 id="Codility-L6-T3-NumberOfDiscIntersections"><a href="#Codility-L6-T3-NumberOfDiscIntersections" class="headerlink" title="Codility L6 T3.NumberOfDiscIntersections"></a>Codility L6 T3.NumberOfDiscIntersections</h1>
+        
       
 
       
@@ -1062,11 +1059,19 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">todo</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+                <a href="javascript:void(0)" class="js-tag color1">matplotlib</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1074,7 +1079,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">matplotlib</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1083,14 +1088,6 @@ MathJax.Hub.Queue(function() {
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color2">data mining</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
               </li>
              
               <li class="article-tag-list-item">
