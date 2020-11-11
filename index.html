@@ -179,39 +179,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<h4 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h4><p>Google Cloud Platform Virtual Machine,</p>
-<p><img src="C:%5CUsers%5CSola%5CBlog%5Csource_posts%5CSetup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform%5C0.png" alt="0"></p>
-<p>install VNC viewer</p>
-<h4 id="Install-Ubuntu-desktop-and-VNC-server"><a href="#Install-Ubuntu-desktop-and-VNC-server" class="headerlink" title="Install Ubuntu desktop and VNC server"></a>Install Ubuntu desktop and VNC server</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SSH to GCP VM,</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get upgrade</span><br><span class="line"></span><br><span class="line">sudo apt-get install ubuntu-desktop</span><br><span class="line"></span><br><span class="line">sudo apt-get install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal</span><br><span class="line"></span><br><span class="line">sudo apt-get install vnc4server</span><br></pre></td></tr></table></figure>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vncserver</span><br></pre></td></tr></table></figure>
-
-<p>Enter and verify a 6 characters password.</p>
-<p>Then you’ll get something like “VMname:1”</p>
-<p>Then</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi .vnc/xstartup</span><br></pre></td></tr></table></figure>
-
-<p>press “i” to modify then add below</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gnome-panel &amp;</span><br><span class="line"></span><br><span class="line">gnome-settings-daemon &amp;</span><br><span class="line"></span><br><span class="line">metacity &amp;</span><br><span class="line"></span><br><span class="line">nautilus &amp;</span><br></pre></td></tr></table></figure>
-
-<p>like,<img src="C:%5CUsers%5CSola%5CBlog%5Csource_posts%5CSetup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform%5Cmodify.png" alt="modify"></p>
-<p>then press “esc” + “:wq” + “enter” to save and quit.</p>
-<h4 id="Set-GCP-VM-firewall"><a href="#Set-GCP-VM-firewall" class="headerlink" title="Set GCP VM firewall"></a>Set GCP VM firewall</h4><p><img src="C:%5CUsers%5CSola%5CBlog%5Csource_posts%5CSetup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform%5C1.png" alt="1"></p>
-<p><img src="C:%5CUsers%5CSola%5CBlog%5Csource_posts%5CSetup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform%5C2.png" alt="2"></p>
-<p><img src="C:%5CUsers%5CSola%5CBlog%5Csource_posts%5CSetup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform%5C3.png" alt="3"></p>
-<p><img src="C:%5CUsers%5CSola%5CBlog%5Csource_posts%5CSetup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform%5C4.png" alt="4"></p>
-<h4 id="VNC-viewer"><a href="#VNC-viewer" class="headerlink" title="VNC viewer"></a>VNC viewer</h4><p><img src="C:%5CUsers%5CSola%5CBlog%5Csource_posts%5CSetup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform%5Cip.png" alt="ip"></p>
-<p>Copy this IP ↑ from GCP</p>
-<p>Open VNC viewer, type yourIP:5901 if your desktop name is “VMname:1” (5902 if “VMname:2” and so on)</p>
-<p>Done</p>
-<h4 id="Some-other-commends"><a href="#Some-other-commends" class="headerlink" title="Some other commends"></a>Some other commends</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vncserver kill :1</span><br></pre></td></tr></table></figure>
-
-<p>to kill an existing desktop</p>
-<p>reference: <a href="https://www.youtube.com/watch?v=oYso_F7GW3A&amp;t=1142s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=oYso_F7GW3A&amp;t=1142s</a></p>
-<p>(Attention: there are some problems with the sequence of steps in the video)</p>
-
+        <h1 id="Setup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform"><a href="#Setup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform" class="headerlink" title="Setup Desktop GUI Screen for a Virtual Machine on Google Cloud Platform"></a>Setup Desktop GUI Screen for a Virtual Machine on Google Cloud Platform</h1>
+        
       
 
       
@@ -272,7 +241,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/11/caffe-installation-on-ubuntu/">Caffe installation on ubuntu</a>
+      <a class="article-title" href="/2020/11/11/caffe-installation-on-ubuntu/">Caffe installation on Ubuntu</a>
     </h1>
   
 
@@ -287,11 +256,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>
-
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get upgrade</span><br><span class="line"></span><br><span class="line">sudo apt-get install g++ emacs</span><br><span class="line"></span><br><span class="line">sudo apt-get install caffe-cpu libcaffe-cpu-dev libcaffe-cpu1 libopenblas-dev libprotobuf-dev protobuf-compiler libboost-all-dev libgflags-dev libgoogle-glog-dev</span><br><span class="line"></span><br><span class="line">sudo apt-get install libopencv-dev</span><br></pre></td></tr></table></figure>
-
-
+        <h1 id="Caffe-installation-on-Ubuntu"><a href="#Caffe-installation-on-Ubuntu" class="headerlink" title="Caffe installation on Ubuntu"></a>Caffe installation on Ubuntu</h1>
+        
       
 
       
@@ -1097,15 +1063,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">NLP</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">matplotlib</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">NLP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1113,7 +1079,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCP</a>
+                <a href="javascript:void(0)" class="js-tag color1">matplotlib</a>
               </li>
              
               <li class="article-tag-list-item">
