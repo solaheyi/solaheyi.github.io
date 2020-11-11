@@ -157,6 +157,194 @@
           <div id="js-content" class="content-ll">
             
   
+    <article id="post-Setup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/11/Setup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform/">Setup Desktop GUI Screen for a Virtual Machine on Google Cloud Platform</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/11/Setup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform/" class="archive-article-date">
+
+  	<time datetime="2020-11-11T05:30:57.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-11</time>
+</a>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+<h4 id="Preparation"><a href="#Preparation" class="headerlink" title="Preparation"></a>Preparation</h4><p>Google Cloud Platform Virtual Machine,</p>
+<p><img src="C:%5CUsers%5CSola%5CBlog%5Csource_posts%5CSetup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform%5C0.png" alt="0"></p>
+<p>install VNC viewer</p>
+<h4 id="Install-Ubuntu-desktop-and-VNC-server"><a href="#Install-Ubuntu-desktop-and-VNC-server" class="headerlink" title="Install Ubuntu desktop and VNC server"></a>Install Ubuntu desktop and VNC server</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">SSH to GCP VM,</span><br><span class="line"></span><br><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get upgrade</span><br><span class="line"></span><br><span class="line">sudo apt-get install ubuntu-desktop</span><br><span class="line"></span><br><span class="line">sudo apt-get install gnome-panel gnome-settings-daemon metacity nautilus gnome-terminal</span><br><span class="line"></span><br><span class="line">sudo apt-get install vnc4server</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vncserver</span><br></pre></td></tr></table></figure>
+
+<p>Enter and verify a 6 characters password.</p>
+<p>Then you’ll get something like “VMname:1”</p>
+<p>Then</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vi .vnc/xstartup</span><br></pre></td></tr></table></figure>
+
+<p>press “i” to modify then add below</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">gnome-panel &amp;</span><br><span class="line"></span><br><span class="line">gnome-settings-daemon &amp;</span><br><span class="line"></span><br><span class="line">metacity &amp;</span><br><span class="line"></span><br><span class="line">nautilus &amp;</span><br></pre></td></tr></table></figure>
+
+<p>like,<img src="C:%5CUsers%5CSola%5CBlog%5Csource_posts%5CSetup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform%5Cmodify.png" alt="modify"></p>
+<p>then press “esc” + “:wq” + “enter” to save and quit.</p>
+<h4 id="Set-GCP-VM-firewall"><a href="#Set-GCP-VM-firewall" class="headerlink" title="Set GCP VM firewall"></a>Set GCP VM firewall</h4><p><img src="C:%5CUsers%5CSola%5CBlog%5Csource_posts%5CSetup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform%5C1.png" alt="1"></p>
+<p><img src="C:%5CUsers%5CSola%5CBlog%5Csource_posts%5CSetup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform%5C2.png" alt="2"></p>
+<p><img src="C:%5CUsers%5CSola%5CBlog%5Csource_posts%5CSetup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform%5C3.png" alt="3"></p>
+<p><img src="C:%5CUsers%5CSola%5CBlog%5Csource_posts%5CSetup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform%5C4.png" alt="4"></p>
+<h4 id="VNC-viewer"><a href="#VNC-viewer" class="headerlink" title="VNC viewer"></a>VNC viewer</h4><p><img src="C:%5CUsers%5CSola%5CBlog%5Csource_posts%5CSetup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform%5Cip.png" alt="ip"></p>
+<p>Copy this IP ↑ from GCP</p>
+<p>Open VNC viewer, type yourIP:5901 if your desktop name is “VMname:1” (5902 if “VMname:2” and so on)</p>
+<p>Done</p>
+<h4 id="Some-other-commends"><a href="#Some-other-commends" class="headerlink" title="Some other commends"></a>Some other commends</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo vncserver kill :1</span><br></pre></td></tr></table></figure>
+
+<p>to kill an existing desktop</p>
+<p>reference: <a href="https://www.youtube.com/watch?v=oYso_F7GW3A&amp;t=1142s" target="_blank" rel="noopener">https://www.youtube.com/watch?v=oYso_F7GW3A&amp;t=1142s</a></p>
+<p>(Attention: there are some problems with the sequence of steps in the video)</p>
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">GCP</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/11/Setup-Desktop-GUI-Screen-for-a-Virtual-Machine-on-Google-Cloud-Platform/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
+    <article id="post-caffe-installation-on-ubuntu" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2020/11/11/caffe-installation-on-ubuntu/">Caffe installation on ubuntu</a>
+    </h1>
+  
+
+        
+        <a href="/2020/11/11/caffe-installation-on-ubuntu/" class="archive-article-date">
+
+  	<time datetime="2020-11-11T05:27:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-11-11</time>
+</a>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <a id="more"></a>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get upgrade</span><br><span class="line"></span><br><span class="line">sudo apt-get install g++ emacs</span><br><span class="line"></span><br><span class="line">sudo apt-get install caffe-cpu libcaffe-cpu-dev libcaffe-cpu1 libopenblas-dev libprotobuf-dev protobuf-compiler libboost-all-dev libgflags-dev libgoogle-glog-dev</span><br><span class="line"></span><br><span class="line">sudo apt-get install libopencv-dev</span><br></pre></td></tr></table></figure>
+
+
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Caffe</a>
+        		</li>
+      		
+		</ul>
+	</div>
+
+      
+
+      
+        <p class="article-more-link">
+          <a class="article-more-a" href="/2020/11/11/caffe-installation-on-ubuntu/">展开全文 >></a>
+        </p>
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+
+  
     <article id="post-LeetCode.Single Number I~III" class="article article-type-post  article-index" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -773,160 +961,6 @@
 
 
   
-    <article id="post-Codility-L5-T3" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/21/Codility-L5-T3/">Codility L5 T3</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/21/Codility-L5-T3/" class="archive-article-date">
-
-  	<time datetime="2020-06-20T17:38:39.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-21</time>
-</a>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Codility-L5-T3-MinAvgTwoSlice"><a href="#Codility-L5-T3-MinAvgTwoSlice" class="headerlink" title="Codility L5 T3.MinAvgTwoSlice"></a>Codility L5 T3.MinAvgTwoSlice</h1>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Codility</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/21/Codility-L5-T3/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-Codility-L5-T2" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/06/21/Codility-L5-T2/">Codility L5 T2</a>
-    </h1>
-  
-
-        
-        <a href="/2020/06/21/Codility-L5-T2/" class="archive-article-date">
-
-  	<time datetime="2020-06-20T17:03:24.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-06-21</time>
-</a>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h1 id="Codility-L5-T2-GenomicRangeQuery"><a href="#Codility-L5-T2-GenomicRangeQuery" class="headerlink" title="Codility L5 T2.GenomicRangeQuery"></a>Codility L5 T2.GenomicRangeQuery</h1>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">Codility</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/2020/06/21/Codility-L5-T2/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
     <nav id="page-nav">
       <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
@@ -1059,19 +1093,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">todo</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">matplotlib</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1079,7 +1101,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color1">matplotlib</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">LeetCode</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">data mining</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">GCP</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">ubuntu</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1087,7 +1125,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">data mining</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
               </li>
              
               <li class="article-tag-list-item">
