@@ -179,23 +179,8 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <a id="more"></a>  
-
-<h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>script was stopped after closing GCP browser</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><ol>
-<li>Install GNU screen,</li>
-</ol>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line"></span><br><span class="line">sudo apt-get upgrade</span><br><span class="line"></span><br><span class="line">sudo apt-get install screen</span><br></pre></td></tr></table></figure>
-
-<ol start="2">
-<li>Type “screen”. this will open up a new screen - kind of similar in look &amp; feel to what “clear” would result in.</li>
-<li>Run the process.</li>
-<li>Type: Ctrl + A, and then Ctrl + D. This will detach screen session but leave your processes running.</li>
-<li>When closing the SSH terminal, ssh will back into GCP VM, and it is able to type screen -r to resume previously detached session.</li>
-<li>To kill all detached screens, run: screen -ls | grep pts | cut -d. -f1 | awk ‘{print $1}’ | xargs kill</li>
-</ol>
-<p>reference: <a href="https://stackoverflow.com/questions/48221807/google-cloud-instance-terminate-after-close-browser" target="_blank" rel="noopener">https://stackoverflow.com/questions/48221807/google-cloud-instance-terminate-after-close-browser</a></p>
-
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>script was stopped after closing GCP browser</p>
+        
       
 
       
@@ -1078,11 +1063,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">GCP</a>
+                <a href="javascript:void(0)" class="js-tag color4">NLP</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">matplotlib</a>
+                <a href="javascript:void(0)" class="js-tag color4">GCP</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1090,7 +1075,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">NLP</a>
+                <a href="javascript:void(0)" class="js-tag color1">matplotlib</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -1102,11 +1087,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Caffe</a>
+                <a href="javascript:void(0)" class="js-tag color1">flask</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">flask</a>
+                <a href="javascript:void(0)" class="js-tag color1">Caffe</a>
               </li>
              
               <li class="article-tag-list-item">
